@@ -23,7 +23,7 @@
 			<if test="fields == null">
 			username,password,degree,email,gender,img_url,phone,real_name,school,is_del
 			</if>
-		FROM bbs_employee
+		FROM employee
 	</sql>
 	<sql id="employeeListWhere">
 		<where>
@@ -117,12 +117,12 @@
 
 	<!-- 根据主键查询 -->
 	<select id="getEmployeeByKey" resultMap="employee" parameterType="hashMap">
-		SELECT username,password,degree,email,gender,img_url,phone,real_name,school,is_del FROM bbs_employee
+		SELECT username,password,degree,email,gender,img_url,phone,real_name,school,is_del FROM employee
 		WHERE
 		username=#{id}
 	</select>
 	<select id="getEmployeesByKeys" resultMap="employee" parameterType="ArrayList">
-		SELECT username,password,degree,email,gender,img_url,phone,real_name,school,is_del FROM bbs_employee
+		SELECT username,password,degree,email,gender,img_url,phone,real_name,school,is_del FROM employee
 		WHERE
 		username in
 		<foreach collection="list" separator="," item="id" open="(" close=")">
@@ -132,14 +132,14 @@
 
 	<!-- 根据主键删除 -->
 	<delete id="deleteByKey" parameterType="hashMap">
-		DELETE FROM bbs_employee
+		DELETE FROM employee
 		WHERE
 		username=#{id}
 	</delete>
 
 	<!-- 根据主键批量删除 -->
 	<delete id="deleteByKeys">
-		DELETE FROM bbs_employee
+		DELETE FROM employee
 		WHERE
 		username in
 		<foreach collection="list" separator="," item="id" open="(" close=")">
@@ -149,7 +149,7 @@
 
 	<!-- 根据主键更新 -->
 	<update id="updateEmployeeByKey" parameterType="Employee">
-		UPDATE bbs_employee
+		UPDATE employee
 		<set>
 			<trim suffixOverrides=",">
 				<if test="username != null">
@@ -196,7 +196,7 @@
 	</select>
 	<!-- 数据总数 -->
 	<select id="getEmployeeListCount" parameterType="EmployeeQuery" resultType="int">
-		SELECT count(1) FROM bbs_employee
+		SELECT count(1) FROM employee
 		<include refid="employeeListWhere" />
 	</select>
 	<!-- 数据集合 -->
@@ -207,7 +207,7 @@
 	</select>
 	<!-- 添加 -->
 	<insert id="addEmployee" parameterType="Employee">
-		INSERT INTO bbs_employee
+		INSERT INTO employee
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 				<if test="username != null">
 					username,

@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
  */
 public class HttpSessionProvider implements SessionProvider{
 
-	@Override
 	public void setAttribute(HttpServletRequest request,HttpServletResponse response, String name,
 			Serializable value) {
 		// TODO Auto-generated method stub
@@ -21,7 +20,6 @@ public class HttpSessionProvider implements SessionProvider{
 		session.setAttribute(name, value);
 	}
 
-	@Override
 	public Serializable getAttribute(HttpServletRequest request,HttpServletResponse response, String name) {
 		HttpSession session = request.getSession(false);
 		if(session != null){
@@ -30,7 +28,6 @@ public class HttpSessionProvider implements SessionProvider{
 		return null;
 	}
 
-	@Override
 	public void logout(HttpServletRequest request,HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
@@ -41,7 +38,6 @@ public class HttpSessionProvider implements SessionProvider{
 		
 	}
 
-	@Override
 	public String getSessionId(HttpServletRequest request,HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		//request.getRequestedSessionId();  //Http://localhost:8080/html/sfsf.shtml?JESSIONID=ewrqwrq234123412

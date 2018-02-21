@@ -18,8 +18,7 @@ public class CenterController {
 	//每一个Springmvc
 	@RequestMapping(value = "/test/springmvc.do")
 	public String test(String name,Date birthday){
-		
-		
+
 		System.out.println();
 		return "";
 	}
@@ -59,6 +58,5 @@ public class CenterController {
 	public String right(){
 		return "right";
 	}
-	
 
 }

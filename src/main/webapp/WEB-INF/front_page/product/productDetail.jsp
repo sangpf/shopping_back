@@ -161,7 +161,6 @@ function sizeToRed(target,id){
 	</c:forEach>
 }
 
-
 //加入购物车
 function addCart(){
 	alert("添加购物车成功!");

@@ -26,39 +26,37 @@ public class SpringmvcInterceptor implements HandlerInterceptor{
 	//常量
 	private static final String INTERCEPTOR_URL = "/buyer/";
 	//方法前   /buyer/
-	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		// TODO Auto-generated method stub
 		if(adminId != null){
 			Buyer buyer = new Buyer();
 			buyer.setUsername("fbb2014");
-			sessionProvider.setAttribute(request,response, Constants.BUYER_SESSION, buyer);
+//			sessionProvider.setAttribute(request,response, Constants.BUYER_SESSION, buyer);
 			request.setAttribute("isLogin", true);
 		}else{
-			Buyer buyer = (Buyer) sessionProvider.getAttribute(request,response, Constants.BUYER_SESSION);
+//			Buyer buyer = (Buyer) sessionProvider.getAttribute(request,response, Constants.BUYER_SESSION);
 			boolean flag = false;
-			if(null != buyer){
-				flag = true;
-			}
+//			if(null != buyer){
+//				flag = true;
+//			}
 			request.setAttribute("isLogin", flag);
-			
+
 			//是否拦截   http://localhost:8080/buyer/index.shtml
 			//  /buyer/index.shtml
 			String requestURI = request.getRequestURI();
 			if(requestURI.startsWith(INTERCEPTOR_URL)){
 				//必须登陆
-				if(null == buyer){
-					response.sendRedirect("/shopping/login.shtml?returnUrl=" + request.getParameter("returnUrl"));
-					return false;
-				}
+//				if(null == buyer){
+//					response.sendRedirect("/shopping/login.shtml?returnUrl=" + request.getParameter("returnUrl"));
+//					return false;
+//				}
 			}
 		}
 		return true;
 	}
 
 	//方法后
-	@Override
 	public void postHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
@@ -67,7 +65,6 @@ public class SpringmvcInterceptor implements HandlerInterceptor{
 	}
 
 	//页面渲染后
-	@Override
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {

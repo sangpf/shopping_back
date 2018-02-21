@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	default-lazy-init="true">
 
-	<bean id="captchaService" class="com.octo.captcha.service.multitype.GenericManageableCaptchaService">
+	<!--<bean id="captchaService" class="com.octo.captcha.service.multitype.GenericManageableCaptchaService">
 		<constructor-arg index="0" ref="imageEngine"/>
 		<constructor-arg type="int" index="1" value="180"/>
 		<constructor-arg type="int" index="2" value="100000"/>
@@ -27,7 +27,7 @@
 	</bean>
 
 	<bean id="wordgen" class= "com.octo.captcha.component.word.wordgenerator.RandomWordGenerator">		
-		<!--可选字符-->
+		&lt;!&ndash;可选字符&ndash;&gt;
 		<constructor-arg>
 			<value>aabbccddeefgghhkkmnnooppqqsstuuvvwxxyyzz</value>
 		</constructor-arg>
@@ -46,11 +46,11 @@
 	</bean>
 
 	<bean id="fontGenRandom" class="com.octo.captcha.component.image.fontgenerator.RandomFontGenerator">
-		<!--最小字体-->
+		&lt;!&ndash;最小字体&ndash;&gt;
 		<constructor-arg index="0">
 			<value>26</value>
 		</constructor-arg>
-		<!--最大字体-->
+		&lt;!&ndash;最大字体&ndash;&gt;
 		<constructor-arg index="1">
 			<value>34</value>
 		</constructor-arg>
@@ -65,33 +65,33 @@
 		</constructor-arg>
 	</bean>
 	<bean id="backGenUni" class="com.octo.captcha.component.image.backgroundgenerator.UniColorBackgroundGenerator">
-		<!--背景宽度-->
+		&lt;!&ndash;背景宽度&ndash;&gt;
 		<constructor-arg index="0">
 			<value>110</value>
 		</constructor-arg>
-		<!--背景高度-->
+		&lt;!&ndash;背景高度&ndash;&gt;
 		<constructor-arg index="1">
 			<value>50</value>
 		</constructor-arg>
 	</bean>
 
 	<bean id="decoratedPaster" class="com.octo.captcha.component.image.textpaster.DecoratedRandomTextPaster">
-		<!--最大字符长度-->
+		&lt;!&ndash;最大字符长度&ndash;&gt;
 		<constructor-arg type="java.lang.Integer" index="0">
 			<value>4</value>
 		</constructor-arg>
-		<!--最小字符长度-->
+		&lt;!&ndash;最小字符长度&ndash;&gt;
 		<constructor-arg type="java.lang.Integer" index="1">
 			<value>4</value>
 		</constructor-arg>
-		<!--文本颜色-->
+		&lt;!&ndash;文本颜色&ndash;&gt;
 		<constructor-arg index="2">
 			<ref bean="colorGen"/>
 		</constructor-arg>
-		<!--文本混淆-->
+		&lt;!&ndash;文本混淆&ndash;&gt;
 		<constructor-arg index="3">
 			<list>
-				<!--<ref bean="baffleDecorator"/>-->
+				&lt;!&ndash;<ref bean="baffleDecorator"/>&ndash;&gt;
 			</list>
 		</constructor-arg>
 	</bean>	
@@ -125,5 +125,6 @@
 		<constructor-arg type="int" index="2">
 			<value>50</value>
 		</constructor-arg>
-	</bean>
+	</bean>-->
+
 </beans>

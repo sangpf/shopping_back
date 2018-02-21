@@ -53,7 +53,6 @@ public class ProductController {
 	private FeatureService featureService;
 	@Autowired
 	private ColorService colorService;
-	
 
 	//商品列表
 	@RequestMapping(value = "/product/list.do")
@@ -68,8 +67,7 @@ public class ProductController {
 		List<Brand> brands = brandService.getBrandList(brandQuery);
 		//显示在页面
 		model.addAttribute("brands", brands);
-		
-		
+
 		//分页参数
 		StringBuilder params = new StringBuilder();
 		
@@ -122,8 +120,7 @@ public class ProductController {
 		pagination.pageView(url, params.toString());
 		
 		model.addAttribute("pagination", pagination);
-		
-		
+
 		return "product/list";
 	}
 	//去添加页面
@@ -149,12 +146,13 @@ public class ProductController {
 		List<Brand> brands = brandService.getBrandList(brandQuery);
 		//显示在页面
 		model.addAttribute("brands", brands);
+
 		//加载商品属性
 		FeatureQuery featureQuery = new FeatureQuery();
-		
 		List<Feature> features = featureService.getFeatureList(featureQuery);
 		//显示在页面
 		model.addAttribute("features", features);
+
 		//加载颜色
 		ColorQuery colorQuery = new ColorQuery();
 		colorQuery.setParentId(0);
@@ -164,6 +162,7 @@ public class ProductController {
 		
 		return "product/add";
 	}
+
 	//商品添加
 	@RequestMapping(value = "/product/add.do")
 	public String add(Product product,Img img){

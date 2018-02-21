@@ -24,7 +24,7 @@
 			<if test="fields == null">
 			username,password,gender,email,real_name,register_time,province,city,town,addr,is_del
 			</if>
-		FROM bbs_buyer
+		FROM buyer
 	</sql>
 	<sql id="buyerListWhere">
 		<where>
@@ -111,12 +111,12 @@
 
 	<!-- 根据主键查询 -->
 	<select id="getBuyerByKey" resultMap="buyer" parameterType="hashMap">
-		SELECT username,password,gender,email,real_name,register_time,province,city,town,addr,is_del FROM bbs_buyer
+		SELECT username,password,gender,email,real_name,register_time,province,city,town,addr,is_del FROM buyer
 		WHERE
 		username=#{id}
 	</select>
 	<select id="getBuyersByKeys" resultMap="buyer" parameterType="ArrayList">
-		SELECT username,password,gender,email,real_name,register_time,province,city,town,addr,is_del FROM bbs_buyer
+		SELECT username,password,gender,email,real_name,register_time,province,city,town,addr,is_del FROM buyer
 		WHERE
 		username in
 		<foreach collection="list" separator="," item="id" open="(" close=")">
@@ -126,14 +126,14 @@
 
 	<!-- 根据主键删除 -->
 	<delete id="deleteByKey" parameterType="hashMap">
-		DELETE FROM bbs_buyer
+		DELETE FROM buyer
 		WHERE
 		username=#{id}
 	</delete>
 
 	<!-- 根据主键批量删除 -->
 	<delete id="deleteByKeys">
-		DELETE FROM bbs_buyer
+		DELETE FROM buyer
 		WHERE
 		username in
 		<foreach collection="list" separator="," item="id" open="(" close=")">
@@ -143,7 +143,7 @@
 
 	<!-- 根据主键更新 -->
 	<update id="updateBuyerByKey" parameterType="Buyer">
-		UPDATE bbs_buyer
+		UPDATE buyer
 		<set>
 			<trim suffixOverrides=",">
 				<if test="username != null">
@@ -193,7 +193,7 @@
 	</select>
 	<!-- 数据总数 -->
 	<select id="getBuyerListCount" parameterType="BuyerQuery" resultType="int">
-		SELECT count(1) FROM bbs_buyer
+		SELECT count(1) FROM buyer
 		<include refid="buyerListWhere" />
 	</select>
 	<!-- 数据集合 -->
@@ -204,7 +204,7 @@
 	</select>
 	<!-- 添加 -->
 	<insert id="addBuyer" parameterType="Buyer">
-		INSERT INTO bbs_buyer
+		INSERT INTO buyer
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 				<if test="username != null">
 					username,

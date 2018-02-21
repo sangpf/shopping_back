@@ -11,12 +11,12 @@
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<!-- Memcached 配置 -->
-	<bean id="memCachedClient" class="com.danga.MemCached.MemCachedClient">
+<!--	<bean id="memCachedClient" class="com.danga.MemCached.MemCachedClient">
 		<constructor-arg>
 			<value>sockIOPool</value>
 		</constructor-arg>
 	</bean>
-	<!-- Memcached连接池 -->
+	&lt;!&ndash; Memcached连接池 &ndash;&gt;
 	<bean id="sockIOPool" class="com.danga.MemCached.SockIOPool" factory-method="getInstance" init-method="initialize" destroy-method="shutDown">
 		<constructor-arg>
 			<value>sockIOPool</value>
@@ -33,22 +33,22 @@
 		</property>
 	</bean>
 	
-	<!-- 切面对象 -->
+	&lt;!&ndash; 切面对象 &ndash;&gt;
 	<bean id="cacheInterceptor" class="cn.itcast.common.web.aop.CacheInterceptor">
 		<property name="expiry" value="4200000"/>
 	</bean>
 	
-	<!-- Spring  Aop 配置   get* 配置环绕 -->
+	&lt;!&ndash; Spring  Aop 配置   get* 配置环绕 &ndash;&gt;
 	<aop:config>
-		<!-- 面 -->
+		&lt;!&ndash; 面 &ndash;&gt;
 		<aop:aspect ref="cacheInterceptor">
-			<!-- 点 -->
+			&lt;!&ndash; 点 &ndash;&gt;
 			<aop:around method="doAround" pointcut="execution(* cn.itcast.core.service.*.*.get*(..))"/>
-			<!-- 变更  -->
+			&lt;!&ndash; 变更  &ndash;&gt;
 			<aop:after method="doAfter" pointcut="execution(* cn.itcast.core.service.*.*.update*(..))"/>
 			<aop:after method="doAfter" pointcut="execution(* cn.itcast.core.service.*.*.add*(..))"/>
 			<aop:after method="doAfter" pointcut="execution(* cn.itcast.core.service.*.*.delete*(..))"/>
 		</aop:aspect>
 	</aop:config>
-	
+	-->
 </beans>

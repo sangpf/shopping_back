@@ -18,7 +18,6 @@ import cn.itcast.core.service.product.BrandService;
 @Controller
 public class BrandController {
 
-	
 	@Autowired
 	private BrandService brandService;
 	

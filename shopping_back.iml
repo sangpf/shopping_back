@@ -26,7 +26,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -70,8 +69,68 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.maven-play-plugin.spy:memcached:2.4.2" level="project" />
-    <orderEntry type="library" name="Maven: com.danga:memcached:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: memcached-util:memcached:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-memcached_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.4" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-netty4_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-app_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-cache_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-codec_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-core_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-function_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-lint_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-stats_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler-proxy:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-socks:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-core_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-init_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-jvm_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-logging_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-registry_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-security_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-tunable_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:2.3.4" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.10" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-serversets_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.5.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.javacc:javacc:5.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:scrooge-core_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-stats_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-http_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-base-http_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-netty3_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-netty3-http_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-netty4-http_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-http2_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http2:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-collection_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-tcnative-boringssl-static:2.0.6.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-tunable_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:finagle-toggle_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:util-hashing_2.12:18.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:bijection-core_2.12:0.9.4" level="project" />
+    <orderEntry type="library" name="Maven: com.twitter:libthrift:0.5.0-7" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-scala_2.12:2.8.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.12.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-paranamer:2.8.4" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: net.fckeditor:java-core:2.6" level="project" />

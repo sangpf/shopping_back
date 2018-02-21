@@ -20,7 +20,7 @@
 			<if test="fields == null">
 			id,buyer_id,name,city,addr,phone,is_def
 			</if>
-		FROM bbs_addr
+		FROM addr
 	</sql>
 	<sql id="addrListWhere">
 		<where>
@@ -90,12 +90,12 @@
 
 	<!-- 根据主键查询 -->
 	<select id="getAddrByKey" resultMap="addr" parameterType="hashMap">
-		SELECT id,buyer_id,name,city,addr,phone,is_def FROM bbs_addr
+		SELECT id,buyer_id,name,city,addr,phone,is_def FROM addr
 		WHERE
 		id=#{id}
 	</select>
 	<select id="getAddrsByKeys" resultMap="addr" parameterType="ArrayList">
-		SELECT id,buyer_id,name,city,addr,phone,is_def FROM bbs_addr
+		SELECT id,buyer_id,name,city,addr,phone,is_def FROM addr
 		WHERE
 		id in
 		<foreach collection="list" separator="," item="id" open="(" close=")">
@@ -105,14 +105,14 @@
 
 	<!-- 根据主键删除 -->
 	<delete id="deleteByKey" parameterType="hashMap">
-		DELETE FROM bbs_addr
+		DELETE FROM addr
 		WHERE
 		id=#{id}
 	</delete>
 
 	<!-- 根据主键批量删除 -->
 	<delete id="deleteByKeys">
-		DELETE FROM bbs_addr
+		DELETE FROM addr
 		WHERE
 		id in
 		<foreach collection="list" separator="," item="id" open="(" close=")">
@@ -122,7 +122,7 @@
 
 	<!-- 根据主键更新 -->
 	<update id="updateAddrByKey" parameterType="Addr">
-		UPDATE bbs_addr
+		UPDATE addr
 		<set>
 			<trim suffixOverrides=",">
 				<if test="id != null">
@@ -160,7 +160,7 @@
 	</select>
 	<!-- 数据总数 -->
 	<select id="getAddrListCount" parameterType="AddrQuery" resultType="int">
-		SELECT count(1) FROM bbs_addr
+		SELECT count(1) FROM addr
 		<include refid="addrListWhere" />
 	</select>
 	<!-- 数据集合 -->
@@ -171,7 +171,7 @@
 	</select>
 	<!-- 添加 -->
 	<insert id="addAddr" parameterType="Addr">
-		INSERT INTO bbs_addr
+		INSERT INTO addr
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 				<if test="id != null">
 					id,

@@ -35,7 +35,8 @@ public class CartController {
 
 	//购买按钮
 	@RequestMapping(value = "/shopping/buyCart.shtml")
-	public String buyCart(Integer skuId,Integer amount,Integer buyLimit,Integer productId,HttpServletRequest request ,HttpServletResponse response,ModelMap model){
+	public String buyCart(Integer skuId,Integer amount,Integer buyLimit,Integer productId,
+						  HttpServletRequest request ,HttpServletResponse response,ModelMap model){
 		//第一步:Sku
 			//springmvc 
 			ObjectMapper  om = new ObjectMapper();
@@ -140,7 +141,6 @@ public class CartController {
 		cookie.setPath("/");
 		response.addCookie(cookie);
 
-		
 		return "redirect:/shopping/buyCart.shtml";
 	}
 	//删除一个购物项
@@ -293,9 +293,9 @@ public class CartController {
 					return "redirect:/shopping/buyCart.shtml";
 				}else{
 					//收货地址加载
-					Buyer buyer = (Buyer) sessionProvider.getAttribute(request,response, Constants.BUYER_SESSION);
+//					Buyer buyer = (Buyer) sessionProvider.getAttribute(request,response, Constants.BUYER_SESSION);
 					AddrQuery addrQuery = new AddrQuery();
-					addrQuery.setBuyerId(buyer.getUsername());
+//					addrQuery.setBuyerId(buyer.getUsername());
 					//默认是1
 					addrQuery.setIsDef(1);
 					

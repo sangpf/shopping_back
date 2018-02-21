@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.danga.MemCached.MemCachedClient;
-
 /**
  * 远程Session
  * 存放在Memcached缓存服务器里的Session
@@ -21,49 +19,44 @@ import com.danga.MemCached.MemCachedClient;
  */
 public class CacheSessionProvider implements SessionProvider{
 
-	@Autowired
-	private MemCachedClient memCachedClient;
+//	@Autowired
+//	private MemCachedClient memCachedClient;
 	
 	private int expiry = 30;//分钟
 	
 	private static final String  JSESSIONID = "JSESSIONID";
 	
 	//放值
-	@Override
-	public void setAttribute(HttpServletRequest request,HttpServletResponse response, String name,
-			Serializable value) {
-/*		HttpSession session = request.getSession();//true    Cookie JSESSIONID
-		session.setAttribute(name, value);  */
-			  //本地有一份 
-		     //另一份Memcached
-		Map<String,Serializable> session = new HashMap<String,Serializable>();
-		session.put(name, value);
-		//保存远程了
-		memCachedClient.set(getSessionId(request,response), session, expiry*60);
-	}
+//	public void setAttribute(HttpServletRequest request,HttpServletResponse response, String name,
+//			Serializable value) {
+///*		HttpSession session = request.getSession();//true    Cookie JSESSIONID
+//		session.setAttribute(name, value);  */
+//			  //本地有一份
+//		     //另一份Memcached
+//		Map<String,Serializable> session = new HashMap<String,Serializable>();
+//		session.put(name, value);
+//		//保存远程了
+//		memCachedClient.set(getSessionId(request,response), session, expiry*60);
+//	}
 
 	//取值
-	@SuppressWarnings("unchecked")
-	@Override
-	public Serializable getAttribute(HttpServletRequest request,HttpServletResponse response, String name) {
-		Map<String,Serializable> session = (Map<String, Serializable>) memCachedClient.get(getSessionId(request,response));
-		if(null != session){
-			return session.get(name);
-		}
-		return null;
-	}
+//	@SuppressWarnings("unchecked")
+//	public Serializable getAttribute(HttpServletRequest request,HttpServletResponse response, String name) {
+//		Map<String,Serializable> session = (Map<String, Serializable>) memCachedClient.get(getSessionId(request,response));
+//		if(null != session){
+//			return session.get(name);
+//		}
+//		return null;
+//	}
 
-	@Override
-	public void logout(HttpServletRequest request,HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		if(memCachedClient.keyExists(getSessionId(request, response))){
-			memCachedClient.delete(getSessionId(request, response));
-		}
-		//清理Cookie
-		
-	}
+//	public void logout(HttpServletRequest request,HttpServletResponse response) {
+//		// TODO Auto-generated method stub
+//		if(memCachedClient.keyExists(getSessionId(request, response))){
+//			memCachedClient.delete(getSessionId(request, response));
+//		}
+//		//清理Cookie
+//	}
 
-	@Override
 	public String getSessionId(HttpServletRequest request,HttpServletResponse response) {
 		//所有的Cookie
 		Cookie[] cookies = request.getCookies();

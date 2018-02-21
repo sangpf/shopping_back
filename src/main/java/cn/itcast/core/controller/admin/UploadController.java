@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.itcast.core.utils.MD5Utils;
+import com.sun.jersey.api.client.UniformInterfaceException;
 import net.fckeditor.response.UploadResponse;
 
 import org.apache.commons.io.FilenameUtils;
@@ -81,7 +82,6 @@ public class UploadController {
 		//实例化一个Jersey
 		Client client = new Client();
 
-		
 		//另一台服务器的请求路径是?
 		String url = Constants.IMAGE_URL  + path;
 		//设置请求路径
@@ -91,8 +91,9 @@ public class UploadController {
 		try {
 			resource.put(String.class, pic.getBytes());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (UniformInterfaceException e){
+//			e.printStackTrace();
 		}
 		
 		//返回二个路径
@@ -102,6 +103,7 @@ public class UploadController {
 		
 		ResponseUtils.renderJson(response, jo.toString());
 	}
+
 	//上传Fck图片
 	@RequestMapping(value = "/upload/uploadFck.do")
 	public void uploadFck(HttpServletRequest request,HttpServletResponse response){
